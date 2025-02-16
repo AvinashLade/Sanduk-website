@@ -1,0 +1,46 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const cart = [];
+    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener("click", (event) => {
+            const productElement = event.target.closest(".product");
+            const productName = productElement.querySelector("h3").innerText;
+            const productPrice = productElement.querySelector("p").innerText;
+            
+            const product = {
+                name: productName,
+                price: productPrice
+            };
+            
+            cart.push(product);
+            alert(`${productName} added to cart!`);
+            console.log(cart);
+        });
+    });
+
+    // Additional script to handle cart display
+    function updateCartUI() {
+        const cartContainer = document.querySelector("#cart");
+        cartContainer.innerHTML = "";
+        cart.forEach(item => {
+            const cartItem = document.createElement("div");
+            cartItem.innerText = `${item.name} - ${item.price}`;
+            cartContainer.appendChild(cartItem);
+        });
+    }
+
+    document.querySelector("#view-cart").addEventListener("click", updateCartUI);
+});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+</head>
+<body>
+    <h1>Welcome to Your Website</h1>
+</body>
+</html>
