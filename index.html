@@ -6,7 +6,18 @@
     <title>संदूक - Trendy T-Shirts</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body><body>
+    <button id="openModal">Open Modal</button>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Welcome to Sanduk</h2>
+        <p>This is a simple modal popup.</p>
+    </div>
+</div>
+
+</body>
   
      <header>
         <h1>Welcome to संदूक</h1>
@@ -100,7 +111,38 @@ nav ul li a {
 }
 
 </style>
+<style>
+    .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+</style>
 </head>
    <body>
     <header>
@@ -150,7 +192,24 @@ nav ul li a {
         <p>&copy; 2025 संदूक. All Rights Reserved.</p>
     </footer>
     
-    <script src="script.js"></script>
+    <script src="script.js"></script><script>
+        document.getElementById("openModal").addEventListener("click", function() {
+    document.getElementById("myModal").style.display = "flex";
+});
+
+document.querySelector(".close").addEventListener("click", function() {
+    document.getElementById("myModal").style.display = "none";
+});
+
+// Close the modal if clicked outside the content
+window.addEventListener("click", function(event) {
+    let modal = document.getElementById("myModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
+    </script>
     <script>
 document.addEventListener("DOMContentLoaded", () => {
     const cart = [];
