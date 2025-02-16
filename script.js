@@ -54,6 +54,6 @@
         <p>&copy; 2025 संदूक. All Rights Reserved.</p>
     </footer>
     
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
