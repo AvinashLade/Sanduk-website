@@ -1,27 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-</head>
-<body>
-    <h1>Welcome to Your Website</h1>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>संदूक - Trendy T-Shirts</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>संदूक - T-Shirt Store</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="logo">संदूक</div>
-        <nav>
-            <ul>
+        <nav class="navbar">
+            <div class="logo">संदूक</div>
+            <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#shop">Shop</a></li>
                 <li><a href="#about">About</a></li>
@@ -31,59 +20,40 @@
         </nav>
     </header>
     
-    <section id="home" class="hero">
+    <section class="hero">
         <h1>Wear Your Style with संदूक</h1>
         <p>Premium Quality | Unique Designs | Affordable Prices</p>
-        <a href="#shop" class="btn">Shop Now</a>
+        <a href="#shop" class="shop-now">Shop Now</a>
     </section>
-    
-    <section id="shop" class="products">
+
+    <section id="shop" class="product-section">
         <h2>Featured T-Shirts</h2>
         <div class="product-list">
             <div class="product">
-                <img src="placeholder1.jpg" alt="T-Shirt 1">
+                <img src="tshirt1.jpg" alt="T-Shirt 1">
                 <h3>Cool Printed Tee</h3>
                 <p>₹499</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
             <div class="product">
-                <img src="placeholder2.jpg" alt="T-Shirt 2">
+                <img src="tshirt2.jpg" alt="T-Shirt 2">
                 <h3>Minimalist Tee</h3>
                 <p>₹549</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
             <div class="product">
-                <img src="placeholder3.jpg" alt="T-Shirt 3">
+                <img src="tshirt3.jpg" alt="T-Shirt 3">
                 <h3>Graphic Tee</h3>
                 <p>₹599</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
         </div>
     </section>
-    
+
     <footer>
         <p>&copy; 2025 संदूक. All Rights Reserved.</p>
     </footer>
     
     <script src="script.js"></script>
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
-    const cart = [];
-    const addToCartButtons = document.querySelectorAll(".add-to-cart");
-
-    addToCartButtons.forEach(button => {
-        button.addEventListener("click", (event) => {
-            const productElement = event.target.closest(".product");
-            const productName = productElement.querySelector("h3").innerText;
-            const productPrice = productElement.querySelector("p").innerText;
-
-            const product = { name: productName, price: productPrice };
-            cart.push(product);
-
-            alert(`${productName} added to cart!`);
-            console.log(cart);
-        });
-    });
-});
 </body>
 </html>
